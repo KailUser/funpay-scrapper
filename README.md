@@ -1,5 +1,7 @@
 # Funpay Scrapper
 
+[![Upload Python Package](https://github.com/KailUser/funpay-scrapper/actions/workflows/publish.yml/badge.svg)](https://github.com/KailUser/funpay-scrapper/actions/workflows/publish.yml)
+
 This library provides convenient methods for scraping data from Funpay, a popular online marketplace for buying and selling game items.
 
 ### Profile
