@@ -1,5 +1,5 @@
 import unittest
-from funpay_scraper.profile import Profile
+from funpay_scrapper.profile import Profile
 
 class TestProfile(unittest.TestCase):
     def setUp(self):

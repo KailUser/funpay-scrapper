@@ -25,12 +25,12 @@ class Lots:
             ID (int): The ID of the lots.
         """
         self.id = str(ID)
-        self.url = f"https://funpay.com/lots/{self.id}/"
+        self.url = f"https://funpay.com/lots/{self.id}/" or f"https://funpay.com/chips/{self.id}/"
         self.data = None
 
-        self.get_data()
+        self.__get_data__()
 
-    def get_data(self):
+    def __get_data__(self):
         """
         Retrieves the raw HTML data of the lots.
 
@@ -71,7 +71,7 @@ class Lots:
             dict: A dictionary of lots links.
         """
         soup = BeautifulSoup(self.data, "html.parser")
-        lots = soup.find("div", class_="tc table-hover table-clickable tc-short showcase-table tc-lazyload tc-sortable showcase-has-promo") or soup.find("div", class_="tc table-hover table-clickable tc-short showcase-table tc-lazyload tc-sortable")
+        lots = soup.find("div", class_="tc table-hover table-clickable tc-short showcase-table tc-lazyload tc-sortable showcase-has-promo") or soup.find("div", class_="tc table-hover table-clickable tc-short showcase-table tc-lazyload tc-sortable") or soup.find("div", class_="tc table-hover table-clickable showcase-table tc-sortable tc-lazyload showcase-has-promo")
         lots_links = {}
         if lots:
             lots = lots.find_all("a", class_="tc-item")[:max_limit]
