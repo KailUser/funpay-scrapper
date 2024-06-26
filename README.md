@@ -35,22 +35,24 @@ x = lots.lots_links(10) # Returns a dictionary of lots links. The maximum number
 for key, value in x.items():
     print(key, value) # Prints the dictionary of lots links
 # Output:
-1 {'href': 'https://funpay.com/lots/offer?id=17094859', 'cost': '189.71 ₽', 'seller': 'zvadizz01'}
-2 {'href': 'https://funpay.com/lots/offer?id=23577867', 'cost': '191.90 ₽', 'seller': 'N3CRO88'}
-3 {'href': 'https://funpay.com/lots/offer?id=19861734', 'cost': '192.06 ₽', 'seller': 'KeyShop4ik'}
-4 {'href': 'https://funpay.com/lots/offer?id=30402196', 'cost': '193.23 ₽', 'seller': 'cympaynopom'}
-5 {'href': 'https://funpay.com/lots/offer?id=30190810', 'cost': '193.23 ₽', 'seller': 'ZhannaStewardess'}
-6 {'href': 'https://funpay.com/lots/offer?id=17462750', 'cost': '194.09 ₽', 'seller': 'Bibba'}
-7 {'href': 'https://funpay.com/lots/offer?id=17075913', 'cost': '195.55 ₽', 'seller': 'BoBka92PMT'}
-8 {'href': 'https://funpay.com/lots/offer?id=30404335', 'cost': '195.57 ₽', 'seller': 'nikzpisdili'}
-9 {'href': 'https://funpay.com/lots/offer?id=23581531', 'cost': '195.58 ₽', 'seller': 'GoodGameKeys'}
-10 {'href': 'https://funpay.com/lots/offer?id=21583534', 'cost': '196.74 ₽', 'seller': 'Gastello29'}
+# 1 {'href': 'https://funpay.com/lots/offer?id=17094859', 'cost': '189.71 ₽', 'seller': 'zvadizz01'}
+# 2 {'href': 'https://funpay.com/lots/offer?id=23577867', 'cost': '191.90 ₽', 'seller': 'N3CRO88'}
+# 3 {'href': 'https://funpay.com/lots/offer?id=19861734', 'cost': '192.06 ₽', 'seller': 'KeyShop4ik'}
+# 4 {'href': 'https://funpay.com/lots/offer?id=30402196', 'cost': '193.23 ₽', 'seller': 'cympaynopom'}
+# 5 {'href': 'https://funpay.com/lots/offer?id=30190810', 'cost': '193.23 ₽', 'seller': 'ZhannaStewardess'}
+# 6 {'href': 'https://funpay.com/lots/offer?id=17462750', 'cost': '194.09 ₽', 'seller': 'Bibba'}
+# 7 {'href': 'https://funpay.com/lots/offer?id=17075913', 'cost': '195.55 ₽', 'seller': 'BoBka92PMT'}
+# 8 {'href': 'https://funpay.com/lots/offer?id=30404335', 'cost': '195.57 ₽', 'seller': 'nikzpisdili'}
+# 9 {'href': 'https://funpay.com/lots/offer?id=23581531', 'cost': '195.58 ₽', 'seller': 'GoodGameKeys'}
+# 10 {'href': 'https://funpay.com/lots/offer?id=21583534', 'cost': '196.74 ₽', 'seller': 'Gastello29'}
 
+print("----------------------------------------------------------------")
+from funpay_scrapper.utils import Chat, Home
 
-# How lots links looks like
-# lots_links[ID] = {
-#     "href": href,
-#     "cost": cost,
-#     "seller": seller
-# }
+chat = Chat() # Initializes the Chat object
+for message in chat.chat_messages():
+    print(message, chat.chat_messages()[message]) # Prints the chat messages
+
+home = Home() # Initializes the Home object
+print(home.find_game("AFK Arena")) # Output: True, lINK(HREF)  | Warning! Please don't confuse chips id with lots id! 
 ```
