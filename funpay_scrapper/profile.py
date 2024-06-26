@@ -83,7 +83,7 @@ class Profile:
         Returns:
             list: A list of offers made by the profile.
         """
-        print(f"Getting offers for ID: {self.id}")
+        # print(f"Getting offers for ID: {self.id}")
         soup = BeautifulSoup(self.data, "html.parser")
         offers_list = soup.find("div", class_="mb20")
         offers_title = []
@@ -93,3 +93,6 @@ class Profile:
         for offer in offers_title:
             offers.append(offer.find("h3").text)
         return offers
+
+    # def reviews(self, max_limit=10):
+        # soup
